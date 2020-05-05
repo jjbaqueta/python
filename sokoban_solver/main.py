@@ -19,7 +19,7 @@ The A* can be configured to execute the following searches:
 def main():
     try:
         # Loading a game layout from the input file 'levels.txt'
-        maze = Maze("levels", 1)
+        maze = Maze("levels", 10)
 
         # Finding the player's position
         playerPos = maze.findPlayerPos()
@@ -32,8 +32,8 @@ def main():
 
         # Select the type of search
 #        searchType = SearchType.NO_HEURISTIC
-#        searchType = SearchType.PYTHAGOREAN
-        searchType = SearchType.GREEDY
+        searchType = SearchType.PYTHAGOREAN
+#        searchType = SearchType.GREEDY
 
         # Running the A* algorithm
         solution = Astar.run(maze, State(playerPos, boxesPos), docksPos, searchType)
